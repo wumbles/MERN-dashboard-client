@@ -27,12 +27,14 @@ export const Layout: React.FC<LayoutProps> = ({
         }}
       >
         <HeaderToRender />
+
+        {/* Box component below is where general layout bgcolor is located */}
         <Box
           component="main"
           sx={{
             p: { xs: 1, md: 2, lg: 3 },
             flexGrow: 1,
-            bgcolor: (theme) => theme.palette.background.default,
+            bgcolor: "#e9e9ec",
           }}
         >
           {children}
