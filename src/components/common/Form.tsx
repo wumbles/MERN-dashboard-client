@@ -44,7 +44,7 @@ const Form = ({
             <FormHelperText
               sx={{
                 fontWeight: 500,
-                margin: "10px",
+                margin: "10px 0",
                 fontSize: 16,
                 color: "#11142d",
               }}
@@ -54,17 +54,21 @@ const Form = ({
             <TextField
               fullWidth
               required
-              id="outlined-basic"
+              id="standard-basic"
               color="info"
-              variant="outlined"
+              variant="standard"
               {...register("title", { required: true })}
+              style={{
+                borderBottom: "2px solid #808191",
+              }}
+              sx={{ input: { color: "#11142d" } }}
             />
           </FormControl>
           <FormControl>
             <FormHelperText
               sx={{
                 fontWeight: 500,
-                margin: "10px",
+                margin: "10px 0",
                 fontSize: 16,
                 color: "#11142d",
               }}
@@ -80,8 +84,100 @@ const Form = ({
                 width: "100%",
                 background: "transparent",
                 fontSize: "16px",
-                borderColor: "rgba(0,0,0,0.23)",
+                borderColor: "#919191",
+                borderRadius: 6,
+                padding: 10,
+                color: "#11142d",
               }}
+              {...register("description", { required: true })}
+            />
+          </FormControl>
+
+          <Stack direction="row" gap={4}>
+            <FormControl sx={{ flex: 1 }}>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Select Property Type
+              </FormHelperText>
+
+              <Select
+                variant="standard"
+                color="info"
+                displayEmpty
+                required
+                inputProps={{ "aria-label": "Without label" }}
+                defaultValue="apartment"
+                {...register("propertyType", { required: true })}
+                sx={{ color: "#11142d" }}
+                style={{
+                  borderBottom: "2px solid #808191",
+                }}
+              >
+                <MenuItem value="apartment">Apartment</MenuItem>
+                <MenuItem value="villa">Villa</MenuItem>
+                <MenuItem value="farmhouse">Farmhouse</MenuItem>
+                <MenuItem value="condos">Condos</MenuItem>
+                <MenuItem value="townhouse">Townhouse</MenuItem>
+                <MenuItem value="duplex">Duplex</MenuItem>
+                <MenuItem value="studio">Studio</MenuItem>
+                <MenuItem value="chalet">Chalet</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl>
+              <FormHelperText
+                sx={{
+                  fontWeight: 500,
+                  margin: "10px 0",
+                  fontSize: 16,
+                  color: "#11142d",
+                }}
+              >
+                Enter property price
+              </FormHelperText>
+              <TextField
+                fullWidth
+                required
+                id="standard-basic"
+                color="info"
+                type="number"
+                variant="standard"
+                {...register("price", { required: true })}
+                style={{
+                  borderBottom: "2px solid #808191",
+                }}
+                sx={{ input: { color: "#11142d" } }}
+              />
+            </FormControl>
+          </Stack>
+
+          <FormControl>
+            <FormHelperText
+              sx={{
+                fontWeight: 500,
+                margin: "10px 0",
+                fontSize: 16,
+                color: "#11142d",
+              }}
+            >
+              Enter Location
+            </FormHelperText>
+            <TextField
+              fullWidth
+              required
+              id="standard-basic"
+              color="info"
+              variant="standard"
+              {...register("location", { required: true })}
+              style={{
+                borderBottom: "2px solid #808191",
+              }}
+              sx={{ input: { color: "#11142d" } }}
             />
           </FormControl>
         </form>
