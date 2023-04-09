@@ -210,7 +210,9 @@ const AllProperties = () => {
               "aria-label": "Without label",
             }}
             defaultValue={10}
-            onChange={() => {}}
+            onChange={(e) =>
+              setPageSize(e.target.value ? Number(e.target.value) : 10)
+            }
             sx={{ color: "#808191", padding: "10px" }}
             style={{ border: "3px solid #475be8", borderRadius: "6px" }}
           >
