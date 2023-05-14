@@ -1,4 +1,5 @@
 import { useGetIdentity, useOne } from "@pankod/refine-core";
+import { Typography } from "@pankod/refine-mui";
 
 import { Profile } from "components";
 
@@ -11,8 +12,26 @@ const MyProfile = () => {
 
   const myProfile = data?.data ?? [];
 
-  if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>error...</div>;
+  if (isLoading)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Loading...
+      </Typography>
+    );
+  if (isError)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Error...
+      </Typography>
+    );
 
   return (
     <Profile

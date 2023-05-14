@@ -20,8 +20,26 @@ const Home = () => {
 
   const latestProperties = data?.data ?? [];
 
-  if (isLoading) return <Typography>Loading...</Typography>;
-  if (isError) return <Typography>Something went wrong!</Typography>;
+  if (isLoading)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Loading...
+      </Typography>
+    );
+  if (isError)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Something went wrong!
+      </Typography>
+    );
 
   return (
     <Box>

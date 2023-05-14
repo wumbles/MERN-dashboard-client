@@ -1,5 +1,6 @@
 import { useOne } from "@pankod/refine-core";
 import { useParams } from "react-router-dom";
+import { Typography } from "@pankod/refine-mui";
 
 import { Profile } from "components";
 
@@ -15,8 +16,26 @@ const AgentProfile = () => {
 
   const myProfile = data?.data ?? [];
 
-  if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>error...</div>;
+  if (isLoading)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Loading...
+      </Typography>
+    );
+  if (isError)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Error...
+      </Typography>
+    );
 
   return (
     <Profile

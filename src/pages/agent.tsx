@@ -8,8 +8,26 @@ const Agents = () => {
 
   const allAgents = data?.data ?? [];
 
-  if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>error...</div>;
+  if (isLoading)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Loading...
+      </Typography>
+    );
+  if (isError)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Error...
+      </Typography>
+    );
 
   return (
     <Box>

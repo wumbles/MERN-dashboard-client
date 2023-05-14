@@ -153,16 +153,6 @@ function App() {
               icon: <PeopleAltOutlined />,
             },
             {
-              name: "reviews",
-              list: Home,
-              icon: <StarOutlineRounded />,
-            },
-            {
-              name: "messages",
-              list: Home,
-              icon: <ChatBubbleOutlined />,
-            },
-            {
               name: "my-profile",
               options: { label: "My Profile" },
               list: MyProfile,

@@ -49,8 +49,26 @@ const AllProperties = () => {
     };
   }, [filters]);
 
-  if (isLoading) return <Typography>Loading...</Typography>;
-  if (isError) return <Typography>Error...</Typography>;
+  if (isLoading)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Loading...
+      </Typography>
+    );
+  if (isError)
+    return (
+      <Typography
+        sx={{
+          color: "#11142d",
+        }}
+      >
+        Error...
+      </Typography>
+    );
 
   return (
     <Box>
